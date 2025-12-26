@@ -1,0 +1,42 @@
+.About {
+  white-space: nowrap;
+  color: var(--text) !important;
+}
+.btn {
+  border-radius: 20px;
+  margin-top: 0;
+  height: 40px;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--bg);
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(7, 9, 20, 0.5);
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
+}
+
+.navbar {
+  margin: 0;
+  padding: 0 1.25rem;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  color: var(--text);
+  position: fixed;
+  height: 70px !important;
+  backdrop-filter: blur(6px);
+}
+.style {
+  color: var(--text) !important;
+}
+.dark-nav {
+  background-color: rgba(15, 23, 36, 0.9) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  transition: 0.35s;
+}
