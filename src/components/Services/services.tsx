@@ -7,7 +7,7 @@ import frontend from "../images/webdev.jpg";
 import social from "../images/socialman.jpg";
 const services = () => {
   return (
-    <div className="cards">
+    <div id="courses" className="cards">
       {" "}
       <div className="card" style={{ width: "18rem", margin: "20px" }}>
         <img src={virtual} className="card-img-top img-custom" alt="..." />

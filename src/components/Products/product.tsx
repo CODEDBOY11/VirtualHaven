@@ -2,7 +2,7 @@ import "./product.css";
 
 const product = () => {
   return (
-    <div className="container-fluid">
+    <div id="products" className="container-fluid">
       <div className="surface-card">
         <div className="table-container">
           <table className="table table-hover">

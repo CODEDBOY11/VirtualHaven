@@ -7,7 +7,7 @@
   background: linear-gradient(90deg, var(--accent), var(--primary));
   padding: 12px 22px;
   border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 128, 128, 0.12);
   color: var(--text);
   transform: translateZ(0);
 }
@@ -47,6 +47,16 @@
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+/* Light theme: make titles white but keep subtitles readable on white background */
+[data-theme="light"] .title-badge,
+[data-theme="light"] .title-text {
+  color: #ffffff;
+}
+[data-theme="light"] .title-sub {
+  /* darker muted color so subtitles are visible on white */
+  color: rgba(0, 0, 0, 0.65);
 }
 
 @media (min-width: 768px) {

@@ -16,7 +16,7 @@
 }
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
+  box-shadow: 0 10px 22px rgba(0, 128, 128, 0.18);
 }
 
 .navbar {
@@ -39,4 +39,98 @@
   background-color: rgba(15, 23, 36, 0.9) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
   transition: 0.35s;
+}
+
+/* Light-theme navbar: transparent when not scrolled; becomes teal when sticky */
+[data-theme="light"] .navbar {
+  background: transparent;
+  color: #ffffff;
+  transition: background 0.35s ease;
+}
+[data-theme="light"] .navbar .nav-link,
+[data-theme="light"] .navbar .style,
+[data-theme="light"] .navbar .About {
+  color: #ffffff !important;
+}
+[data-theme="light"] .navbar .btn {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+[data-theme="light"] .navbar.dark-nav {
+  background: var(--accent) !important;
+}
+
+/* Tweak switch appearance on light-theme (on teal background) */
+[data-theme="light"] .slider {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="light"] .slider:before {
+  background: #ffffff;
+}
+[data-theme="light"] .switch input:checked + .slider {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Theme switch */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+.switch {
+  --w: 44px;
+  --h: 24px;
+  position: relative;
+  display: inline-block;
+  width: var(--w);
+  height: var(--h);
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  transition: background 200ms ease, border-color 200ms ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 200ms ease, background 200ms ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.switch input:checked + .slider {
+  background: var(--accent);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+  background: #ffffff;
+}
+/* adapt switch in dark theme */
+[data-theme="dark"] .slider {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+[data-theme="dark"] .slider:before {
+  background: #000000;
 }
