@@ -13,7 +13,7 @@ const About = () => {
           <b>digital skills can change lives</b> and create opportunities for
           everyone, no matter where they are.
           <br />
-          <br /> In just <b>2 years</b>, we have trained over
+          <br /> In just <b>2 years</b>, we have trained over{" "}
           <b>40 aspiring VAs/freelancers</b> and supported business owners
           across Nigeria, the UK, and the USA, helping them achieve efficiency,
           visibility, and balance.

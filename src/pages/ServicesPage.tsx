@@ -2,12 +2,22 @@ import Title from "../components/title/title";
 import Services from "../components/Services/services";
 import Products from "../components/Products/product";
 import { useEffect } from "react";
+import "./ServicePage.css";
+import Hero from "../components/hero/hero";
+import type { Program } from "../types/program";
 
 interface ServicesPageProps {
   initialSection?: string;
+  programs: Program[];
 }
 
-const ServicesPage = ({ initialSection }: ServicesPageProps) => {
+const ServicesPage = ({ initialSection, programs }: ServicesPageProps) => {
+  useEffect(() => {
+    // Make navbar solid on this page (no transition/opacity)
+    document.body.classList.add("services-navbar-solid");
+    return () => document.body.classList.remove("services-navbar-solid");
+  }, []);
+
   useEffect(() => {
     if (!initialSection) return;
     const id = initialSection.toLowerCase();
@@ -21,8 +31,10 @@ const ServicesPage = ({ initialSection }: ServicesPageProps) => {
     }
   }, [initialSection]);
 
+  const featured = programs && programs.length > 0 ? programs[0] : undefined;
+
   return (
-    <main className="services-page">
+    <main className="services-page" id="services-page">
       <Title title="Services" subtitle="Courses and Products" />
 
       <nav
@@ -35,16 +47,17 @@ const ServicesPage = ({ initialSection }: ServicesPageProps) => {
         }}
         aria-label="Services quick links"
       >
-        <a className="btn btn-light" href="#/services/courses">
-          Jump to Courses
-        </a>
-        <a className="btn btn-light" href="#/services/products">
+        <a className="btn btn-primary" href="#/services/products">
           Jump to Products
         </a>
       </nav>
 
       <section style={{ padding: "22px 20px" }}>
-        <Services />
+        {featured ? (
+          <Services program={featured} />
+        ) : (
+          <div className="p-6 text-center">No programs available</div>
+        )}
       </section>
 
       <section id="products" style={{ padding: "22px 20px" }}>

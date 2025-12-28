@@ -205,3 +205,20 @@ h5 {
 .title-actions .btn {
   padding: 8px 14px;
 }
+
+/* default navbar: allow transparency and smooth transitions */
+.navbar {
+  background: transparent;
+  color: var(--nav-fg);
+  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* Solid, no transition, full opacity only on Services page */
+.services-navbar-solid .navbar {
+  background: var(--nav-bg) !important;
+  color: var(--nav-fg) !important;
+  transition: none !important;
+  opacity: 1 !important;
+  box-shadow: none;
+}

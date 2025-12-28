@@ -87,7 +87,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active style"
                   aria-current="page"
-                  href="#"
+                  href="#/services/courses"
                 >
                   Courses
                 </a>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active style"
                   aria-current="page"
-                  href="#/services/products"
+                  href=""
                 >
                   Products
                 </a>

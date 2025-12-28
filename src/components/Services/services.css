@@ -88,3 +88,11 @@
   font-size: 14px;
   white-space: nowrap;
 }
+
+[data-theme="light"] .price {
+  margin-left: auto;
+  color: var(--muted);
+}
+[data-theme="dark"] .text-muted {
+  color: var(--accent) !important;
+}
