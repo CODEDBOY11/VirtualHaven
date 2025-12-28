@@ -1,0 +1,60 @@
+/* Product page / table styling for dark vivid theme */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  border-radius: 8px;
+}
+.table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  color: var(--text);
+  background: transparent; /* override bootstrap white */
+}
+.table thead th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.01);
+}
+.table tbody td {
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.03);
+  background: transparent;
+}
+.table tbody tr:nth-child(even) {
+  background: rgba(124, 58, 237, 0.02);
+}
+.table tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.06),
+    rgba(6, 182, 212, 0.04)
+  );
+}
+.table .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.surface-card {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 36, 0.95),
+    rgba(11, 16, 35, 0.98)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  /* Keep tables horizontally scrollable on small screens */
+  .table {
+    min-width: 480px;
+  }
+}
