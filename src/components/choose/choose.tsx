@@ -155,7 +155,7 @@ const Choose = () => {
 
   return (
     <div className="choose-div">
-      <a href="#/contact">
+      <a href="https://wa.link/y6ja7y">
         <button className={`${sticky ? "floating-button" : ""}`}>
           <i className="bi bi-chat-dots" />
           Hire me
