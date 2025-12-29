@@ -35,11 +35,6 @@ export default function CheckoutForm({ program }: CheckoutFormProps) {
       alert("Please enter your full name and a valid email address.");
       return;
     }
-
-    const amount = program?.price ?? 0;
-    // TODO: integrate real payment link using amount & metadata
-    const paystackLink = `https://paystack.com/pay/YOUR_PAYMENT_LINK`;
-    window.location.href = paystackLink;
   };
 
   return (

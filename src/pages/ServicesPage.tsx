@@ -3,7 +3,7 @@ import Services from "../components/Services/services";
 import Products from "../components/Products/product";
 import { useEffect } from "react";
 import "./ServicePage.css";
-import Hero from "../components/hero/hero";
+
 import type { Program } from "../types/program";
 
 interface ServicesPageProps {
