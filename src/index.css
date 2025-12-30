@@ -34,9 +34,10 @@
 html,
 body {
   height: 100%;
+  width: 100% !important;
 }
 body {
-  width: 90%;
+  width: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg);
   color: var(--text);

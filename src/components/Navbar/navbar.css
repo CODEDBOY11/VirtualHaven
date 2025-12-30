@@ -156,6 +156,6 @@
     justify-content: left !important;
   }
   .navbar {
-    width: 100vw;
+    width: 100vw !important;
   }
 }

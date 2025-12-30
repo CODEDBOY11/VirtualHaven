@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../images/logo.png";
 import "./navbar.css";
-import HamburgerMenu from "../hamburger/hamburger";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -151,7 +150,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <HamburgerMenu />
     </div>
   );
 };

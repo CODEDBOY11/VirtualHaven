@@ -38,11 +38,11 @@
 }
 @media (max-width: 768px) {
   .welcome {
-    font-size: 7vw;
+    font-size: 5vw;
     font-weight: bolder;
     left: 0%;
   }
   .tagline {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
 }
