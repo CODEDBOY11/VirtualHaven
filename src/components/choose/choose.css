@@ -37,7 +37,7 @@
     position: fixed;
     font-weight: bold;
     bottom: 10%;
-    right: 20%;
+    right: 8%;
     width: 100px;
     height: 50px;
     background-color: var(--accent);
@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.4s ease, transform 0.3s ease;
 }
 .bi {
   font-size: 18px;

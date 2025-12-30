@@ -21,7 +21,7 @@ const Choose = () => {
   });
 
   useEffect(() => {
-    const handleScroll = () => setSticky(window.scrollY > 250);
+    const handleScroll = () => setSticky(window.scrollY > 50);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
