@@ -72,8 +72,11 @@ const App = (_props: AppProps) => {
       <section style={{ padding: "22px 20px" }}>
         <Products />
       </section>
+      <section id="about-us">
+        {" "}
+        <About />
+      </section>
 
-      <About />
       <Choose />
       <Footer />
     </div>

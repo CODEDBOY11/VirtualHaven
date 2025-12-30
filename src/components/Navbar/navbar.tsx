@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import logo from "../images/logo.png";
 import "./navbar.css";
+import HamburgerMenu from "../hamburger/hamburger";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     try {
       const stored = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -60,7 +62,16 @@ const Navbar = () => {
         className={`navbar navbar-expand  px-5 ${sticky ? "dark-nav" : " "}`}
         style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <div className="container-fluid">
+        <div
+          className="container-fluid"
+          style={{
+            margin: 0,
+            padding: 0,
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "left",
+          }}
+        >
           <img
             src={logo}
             alt="Virtual Haven Logo"
@@ -97,7 +108,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active style"
                   aria-current="page"
-                  href=""
+                  href="#/services/products"
                 >
                   Products
                 </a>
@@ -107,14 +118,20 @@ const Navbar = () => {
                 <a
                   className="nav-link active About"
                   aria-current="page"
-                  href="#"
+                  href="#about-us"
                 >
                   About Us
                 </a>
               </li>
 
               <li className="nav-item">
-                <button className="btn btn-light">Contact</button>
+                <a
+                  className="nav-link active About"
+                  aria-current="page"
+                  href="https://wa.link/o6lfm9"
+                >
+                  <button className="btn btn-light">Contact</button>
+                </a>
               </li>
 
               <li className="nav-item">
@@ -134,6 +151,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <HamburgerMenu />
     </div>
   );
 };

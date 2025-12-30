@@ -134,3 +134,28 @@
 [data-theme="dark"] .slider:before {
   background: #000000;
 }
+.nav-item {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .align-text-top {
+    width: 7rem !important;
+    margin: -20px !important;
+    padding: 0 !important;
+    justify-content: left !important;
+  }
+  .container-fluid {
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: left !important;
+  }
+  .navbar {
+    width: 100vw;
+  }
+}

@@ -36,3 +36,13 @@
   transform: translateX(-50%);
   box-shadow: 0 8px 30px rgba(0, 128, 128, 0.12);
 }
+@media (max-width: 768px) {
+  .welcome {
+    font-size: 7vw;
+    font-weight: bolder;
+    left: 0%;
+  }
+  .tagline {
+    font-size: 3.5vw;
+  }
+}

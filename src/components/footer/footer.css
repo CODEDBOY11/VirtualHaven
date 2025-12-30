@@ -47,12 +47,10 @@
 }
 
 /* Desktop column placement: Quick links left, Brand center, Newsletter right */
-@media (min-width: 881px) {
+@media (min-width: 768px) {
   .footer-links {
-    grid-column: 1;
-    justify-self: start;
-    text-align: left;
-    padding-left: 70px;
+    grid-row: 3;
+    display: none !important;
   }
   .footer-brand {
     grid-column: 2;
@@ -63,9 +61,10 @@
     gap: 12px;
   }
   .footer-newsletter {
-    grid-column: 3;
-    justify-self: end;
-    text-align: left;
+    display: flex !important;
+  }
+  .site-footer {
+    display: block;
   }
 }
 
@@ -221,7 +220,7 @@
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   margin: 100px 0 10px 35%;
-  padding: 14px 20px;
+
   color: var(--muted);
   text-align: center;
   display: block;
@@ -290,37 +289,116 @@
 
 /* Responsive */
 @media (max-width: 880px) {
+  /* Stack as a single column with explicit order: Quick links, Logo+text, Newsletter, Social links */
   .footer-inner {
+    display: grid;
     grid-template-columns: 1fr;
-    text-align: left;
+
+    align-items: start;
+  }
+  .footer-brand {
+    width: 100% !important;
+  }
+  /* Let .footer-brand children participate as direct grid items so we can order them */
+  .footer-brand {
+    display: contents;
+  }
+
+  /* Normalize inner items for mobile */
+  .footer-inner > * {
+    min-height: auto;
+    padding: 12px;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* explicit order */
+  .footer-links {
+    grid-row: 1;
+    margin-top: 50px;
   }
   .footer-logo {
-    width: 150px;
+    grid-row: 2;
+    width: 140px;
+    justify-self: center;
+    margin: 0 auto;
   }
-  .footer-links {
-    margin-top: 8px;
-  }
-  .footer-partners {
-    margin-top: 0;
+  .brand-desc {
+    grid-row: 3;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 70%;
   }
   .footer-newsletter {
-    margin-top: 12px;
+    grid-row: 4;
+  }
+
+  /* Social icons (moved visually below newsletter)
+     We keep it inside .footer-brand in DOM but display:contents makes it a grid child */
+  .social-icons {
+    grid-row: 5;
+    width: 100vw;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Make newsletter inputs stack and full width */
+  .newsletter-form .input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .newsletter-form input[type="email"],
+  .newsletter-form .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-links {
+    width: 85vw;
+    justify-content: center;
+  }
+
+  /* Tighter link spacing for compactness */
+  .footer-links ul {
+    gap: 6px;
+  }
+
+  /* Slightly larger tappable social buttons */
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+  .container {
+    width: 100vw;
+  }
+  /* Footer bottom constraints */
+  .footer-bottom {
+    margin: 24px auto 10px;
+  }
+
+  .footer-bottom .footer-bottom-inner {
+    display: flex;
+    flex-direction: column !important;
+    position: absolute;
+    top: 8850px;
+    left: 0;
+    bottom: 0;
+    gap: 0;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
   }
 }
 .partners-title {
   margin-bottom: 12px;
 }
-.footer-partners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 0;
-  padding: 20px 20px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
+
 .partner-logos {
   margin: 0 auto 0 auto;
   padding: 0;
@@ -342,10 +420,22 @@
   width: 120px;
   height: 40px;
   object-fit: contain;
-  display: block;
+  display: flex;
 }
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    display: flex !important;
+  }
+
+  .tagline {
+    font-size: 3.5vw;
+  }
+}
+.footer-heading {
+  font-weight: 600;
 }

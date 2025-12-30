@@ -1,0 +1,18 @@
+#react-burger-menu-btn {
+  position: fixed;
+  width: 36px !important;
+  height: 30px !important;
+  left: 36px;
+  top: 20% !important;
+  z-index: -1 !important;
+  color: turquoise !important;
+  font-size: larger !important;
+}
+bm-burger-bars {
+  background: #373a47;
+}
+bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 100px;
+}
