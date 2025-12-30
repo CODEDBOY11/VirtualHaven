@@ -440,7 +440,7 @@ ul {
 }
 @media (max-width: 768px) {
   .footer-bottom-inner {
-    margin-top: 600px;
+    margin-top: 300px;
   }
   .site-footer {
     display: flex !important;
