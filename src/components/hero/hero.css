@@ -40,9 +40,12 @@
   .welcome {
     font-size: 5vw;
     font-weight: bolder;
-    left: 0%;
+    left: 20%;
+    margin-top: 20px;
   }
   .tagline {
     font-size: 3vw;
+    left: 39%;
+    white-space: nowrap;
   }
 }
